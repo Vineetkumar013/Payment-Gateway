@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Map</title>
+    <style>
+      #container > div {
+        border: 1px solid red;
+        margin: 30px, 30px;
+      }
+      #container {
+        margin: 40px 10px;
+      }
+      .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        height: 500px;
+        width: 600px;
+      }
+      .mapouter {
+        position: relative;
+        text-align: right;
+        height: 500px;
+        width: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter a location" id="search-input" />
+    <button onclick="searchLocation()">Search</button>
+    <div id="map"></div>
+
+    <script>
+      function searchLocation() {
+        var city = document.getElementById("search-input").value;
+        var map = document.getElementById("map");
+        map.innerHTML = `<iframe width="600" height="500" id="gmap_canvas" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>`;
+        var mapSrc = `https://maps.google.com/maps?q=${city}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+        map.querySelector("#gmap_canvas").src = mapSrc;
+        displayTable(mapSrc);
+      }
+
+      function displayTable(mapSrc) {
+        var container = document.getElementById("container");
+        container.innerHTML = `<div class="mapouter">
+                                        <div class="gmap_canvas">
+                                            <iframe width="600" height="500" id="gmap_canvas" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                            <a href="https://2piratebay.org">pirate bay</a><br />
+                                            <a href="https://www.embedgooglemap.net">how to put google maps on website</a>
+                                        </div>
+                                    </div>`;
+        container.querySelector("#gmap_canvas").src = mapSrc;
+      }
+    </script>
+
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+    ></script>
+  </body>
+</html>
