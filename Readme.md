@@ -1,9 +1,11 @@
-## Project Name
-The project name is Google Map.
+## Project
+In this project i used is Google Map API.
 
+## Payment Gateway
+i Used Razorpay
 
 ## Description
-This project demonstrates a web application that displays a weather map and integrates Google Maps. It also includes a feature to search for locations and display them on the map.
+This project demonstrates a web application that displays integrates Google Maps. It also includes a feature to search for locations and display them on the map.
 
 
 ## Crud Operations
